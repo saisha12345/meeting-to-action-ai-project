@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meeting to Action AI</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="page">
+    <section class="hero">
+      <p class="eyebrow">AI-powered team alignment tool</p>
+      <h1>Turn messy meeting notes into clear action plans.</h1>
+      <p class="subtitle">
+        Meeting to Action AI helps teams extract decisions, action items, risks,
+        open questions, and follow-up messages from unstructured meeting notes.
+      </p>
+    </section>
+
+    <section class="app-grid">
+      <div class="input-panel">
+        <label for="meetingType">Meeting Type</label>
+        <select id="meetingType">
+          <option value="Design Critique">Design Critique</option>
+          <option value="Product Planning">Product Planning</option>
+          <option value="Team Standup">Team Standup</option>
+          <option value="User Research Review">User Research Review</option>
+          <option value="Project Sync">Project Sync</option>
+        </select>
+
+        <label for="meetingNotes">Meeting Notes</label>
+        <textarea id="meetingNotes" placeholder="Paste messy meeting notes here..."></textarea>
+
+        <button onclick="generateBrief()">Generate Action Brief</button>
+        <button class="secondary-button" onclick="loadExample()">Load Example Notes</button>
+      </div>
+
+      <div class="output-panel hidden" id="outputPanel">
+        <div class="brief-header">
+          <div>
+            <p class="eyebrow">Generated Brief</p>
+            <h2 id="briefTitle">Action Brief</h2>
+          </div>
+          <span id="meetingTag" class="tag">Meeting</span>
+        </div>
+
+        <div class="card">
+          <h3>Summary</h3>
+          <p id="summaryOutput"></p>
+        </div>
+
+        <div class="card">
+          <h3>Decisions</h3>
+          <ul id="decisionsOutput"></ul>
+        </div>
+
+        <div class="card">
+          <h3>Action Items</h3>
+          <ul id="actionsOutput"></ul>
+        </div>
+
+        <div class="card">
+          <h3>Open Questions</h3>
+          <ul id="questionsOutput"></ul>
+        </div>
+
+        <div class="card">
+          <h3>Risks</h3>
+          <ul id="risksOutput"></ul>
+        </div>
+
+        <div class="card follow-up">
+          <h3>Follow-up Message</h3>
+          <p id="followUpOutput"></p>
+          <button onclick="copyFollowUp()">Copy Follow-up</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
